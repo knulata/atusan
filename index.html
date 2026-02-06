@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATUSAN - Minyak Herbal 100 Tanaman | Body Oil Alami</title>
+    <meta name="description" content="ATUSAN - Minyak herbal dari 100 jenis tanaman. Mengatasi gatal-gatal, nyeri otot, masuk angin. Tersedia di AEON, Chien Khang Thang, Tokopedia & Shopee.">
+    <link rel="icon" type="image/jpeg" href="images/hero.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-dark: #1a2e23;
+            --green-mid: #2d4a3e;
+            --green-light: #4a6b5d;
+            --gold: #c9a962;
+            --gold-light: #d4bc7d;
+            --cream: #f8f6f1;
+            --white: #ffffff;
+            --text: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.6;
+        }
+
+        h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .brand, .hero-content h1, .footer-brand {
+            font-family: 'Belleza', sans-serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 46, 35, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .brand {
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/hero.jpg') center/cover;
+            opacity: 0.3;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            color: var(--gold);
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content .tagline {
+            color: var(--cream);
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-content p {
+            color: var(--cream);
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 450px;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--green-dark);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--cream);
+            border: 2px solid var(--cream);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--cream);
+            color: var(--green-dark);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .about .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--green-dark);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-subtitle {
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .about-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+            color: var(--gold);
+            padding: 1.5rem 3rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+        }
+
+        .benefits .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits .section-title {
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .benefits .section-subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(201, 169, 98, 0.2);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .benefit-card p {
+            color: var(--cream);
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .products .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            color: var(--green-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info .size {
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .product-info p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-grid img:hover {
+            opacity: 0.8;
+            transform: scale(1.02);
+        }
+
+        /* Where to Buy Section */
+        .wheretobuy {
+            padding: 6rem 2rem;
+            background: var(--green-dark);
+        }
+
+        .wheretobuy .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .wheretobuy .section-title {
+            color: var(--cream);
+        }
+
+        .wheretobuy .section-subtitle {
+            margin-bottom: 3rem;
+        }
+
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .store-card {
+            background: var(--white);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .store-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .store-card img {
+            max-width: 150px;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        .store-card span {
+            margin-top: 1rem;
+            color: var(--green-dark);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .online-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-shopee {
+            background: #ee4d2d;
+            color: white;
+            border-color: #ee4d2d;
+        }
+
+        .btn-shopee:hover {
+            background: #d44426;
+        }
+
+        .btn-tokopedia {
+            background: #42b549;
+            color: white;
+            border-color: #42b549;
+        }
+
+        .btn-tokopedia:hover {
+            background: #3a9f40;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: var(--cream);
+            padding: 4rem 2rem 2rem;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        footer h4 {
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p, footer a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            text-decoration: none;
+            line-height: 2;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            letter-spacing: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        .pom {
+            display: inline-block;
+            background: rgba(201, 169, 98, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-height: 400px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .store-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            footer .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+
+            .btn {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            .store-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="brand">ATUSAN</div>
+            <button class="nav-toggle">&#9776;</button>
+            <ul>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#benefits">Manfaat</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#wheretobuy">Beli</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>ATUSAN</h1>
+                <p class="tagline">Minyak Herbal 100 Tanaman</p>
+                <p>Rahasia kesehatan alami dari nenek moyang. Diformulasikan dari 100 jenis tanaman pilihan untuk memberikan kehangatan dan kenyamanan bagi seluruh keluarga.</p>
+                <div>
+                    <a href="#wheretobuy" class="btn btn-gold">Beli Sekarang</a>
+                    <a href="#benefits" class="btn btn-outline">Pelajari Manfaat</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/product.jpg" alt="ATUSAN Minyak Herbal">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <p class="section-subtitle">Tentang Produk</p>
+            <h2 class="section-title">Warisan Alami Indonesia</h2>
+            <p>ATUSAN adalah minyak herbal premium yang diformulasikan dari ekstrak 100 jenis tanaman berkhasiat. Diproduksi dengan standar kualitas tinggi dan telah terdaftar di BPOM RI.</p>
+            <p>Setiap tetes mengandung kebaikan alam yang telah dipercaya turun-temurun untuk menjaga kesehatan dan kenyamanan tubuh.</p>
+            <div class="about-highlight">100 Jenis Tanaman Herbal</div>
+            <div class="pom">POM TR 236008421</div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <p class="section-subtitle">Khasiat</p>
+            <h2 class="section-title">Manfaat ATUSAN</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>Menghilangkan Gatal-gatal</h3>
+                    <p>Membantu meredakan rasa gatal akibat gigitan serangga atau iritasi kulit ringan.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💆</div>
+                    <h3>Melancarkan Peredaran Darah</h3>
+                    <p>Memberikan efek hangat yang membantu melancarkan sirkulasi darah di area yang dipijat.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤧</div>
+                    <h3>Mengatasi Masuk Angin</h3>
+                    <p>Efektif meredakan gejala masuk angin, kembung, dan sakit perut dengan kehangatan alami.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <h3>Nyeri Otot & Sendi</h3>
+                    <p>Membantu merelaksasi otot yang tegang dan meredakan nyeri pada persendian.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👶</div>
+                    <h3>Aman untuk Si Kecil</h3>
+                    <p>Kehangatan yang pas dan lembut, cocok digunakan untuk anak-anak setiap hari.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>100% Bahan Alami</h3>
+                    <p>Terbuat dari 100 jenis tanaman herbal pilihan tanpa bahan kimia berbahaya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <p class="section-subtitle">Pilihan Produk</p>
+            <h2 class="section-title">Tersedia dalam 2 Ukuran</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/unboxing.jpg" alt="ATUSAN 100ml">
+                    <div class="product-info">
+                        <h3>ATUSAN Original</h3>
+                        <p class="size">100 ml</p>
+                        <p>Ukuran keluarga, cocok untuk penggunaan di rumah. Dilengkapi dengan pump dispenser untuk kemudahan pemakaian.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="images/mini.jpg" alt="ATUSAN 10ml">
+                    <div class="product-info">
+                        <h3>ATUSAN Travel Size</h3>
+                        <p class="size">10 ml</p>
+                        <p>Ukuran praktis untuk dibawa bepergian. Muat di tas atau saku, siap digunakan kapan saja.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="gallery-grid">
+            <img src="images/hero.jpg" alt="ATUSAN">
+            <img src="images/boxes.jpg" alt="ATUSAN Packaging">
+            <img src="images/mini-boxes.jpg" alt="ATUSAN Mini">
+            <img src="images/mini-nature.jpg" alt="ATUSAN Natural">
+        </div>
+    </section>
+
+    <!-- Where to Buy Section -->
+    <section class="wheretobuy" id="wheretobuy">
+        <div class="container">
+            <p class="section-subtitle">Tempat Pembelian</p>
+            <h2 class="section-title">Dapatkan ATUSAN di</h2>
+            <div class="store-grid">
+                <div class="store-card">
+                    <img src="images/aeon.png" alt="AEON Store">
+                    <span>Seluruh AEON Store</span>
+                </div>
+                <div class="store-card">
+                    <img src="images/chienkhang.jpeg" alt="Chien Khang Thang">
+                    <span>Chien Khang Thang</span>
+                </div>
+                <a href="https://tk.tokopedia.com/ZSa3aRpSd/" target="_blank" class="store-card">
+                    <img src="images/tokopedia.png" alt="Tokopedia">
+                    <span>Tokopedia Official</span>
+                </a>
+                <a href="https://id.shp.ee/ueF6E9r" target="_blank" class="store-card">
+                    <img src="images/shopee.png" alt="Shopee">
+                    <span>Shopee Official</span>
+                </a>
+            </div>
+            <div class="online-buttons">
+                <a href="https://id.shp.ee/ueF6E9r" target="_blank" class="btn btn-shopee">Beli di Shopee</a>
+                <a href="https://tk.tokopedia.com/ZSa3aRpSd/" target="_blank" class="btn btn-tokopedia">Beli di Tokopedia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <div class="footer-brand">ATUSAN</div>
+                <p>Minyak herbal premium dari 100 jenis tanaman pilihan. Dipercaya untuk menjaga kesehatan dan kenyamanan seluruh keluarga.</p>
+                <div class="pom">POM TR 236008421</div>
+            </div>
+            <div>
+                <h4>Produk</h4>
+                <p><a href="#products">ATUSAN 100ml</a></p>
+                <p><a href="#products">ATUSAN 10ml</a></p>
+                <p><a href="#benefits">Manfaat</a></p>
+            </div>
+            <div>
+                <h4>Beli Online</h4>
+                <p><a href="https://id.shp.ee/ueF6E9r" target="_blank">Shopee</a></p>
+                <p><a href="https://tk.tokopedia.com/ZSa3aRpSd/" target="_blank">Tokopedia</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 ATUSAN. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
